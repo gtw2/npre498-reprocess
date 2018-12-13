@@ -48,7 +48,7 @@
 \section{Introduction}
 Pyroprocessing is an electrochemical separation method used primarily for metallic fast reactor fuel.
 This reprocessing technique uses molten salt, which differs depending on the facility, to provide a medium for current to travel across.
-Molten salt such as LiCl has a broader stability range comparative to water, allowing high potentials to be used for separation.
+Molten salt such as LiCl-KCl has a broader stability range comparative to water, allowing high potentials to be used for separation.
 Traditionally, separation would be conducted in a nitric acid which uses water as its medium.
 Water, however, has a significantly lower stability compared to molten salt.
 This becomes a problem when considering higher elements such as lanthanides and actinides.
@@ -58,6 +58,11 @@ Hence, Pyroprocessing was born to improve nonproliferation and reprocessing capa
 In addition to the additional redox control of higher elements, we also co-extract materials of interest such that they cannot easily be refined for weapons.
 This is done through the electrorefining and electrowinning stages by separating a pure Uranium stream as well as a Uranium/Transuranic mix stream. 
 The U/TRU can then be readily used for fuel fabrication while maintaining proliferation resistance.
+Although the facility is great in terms of safeguards, pyroprocessing has its share of drawbacks as well.
+Currently, pyroprocessing can only be performed as a batch process, which signficantly limits throughput compared to a continuous facility. 
+Additionally, the safety and economical concerns of running a molten salt plant are much greater than a nitric acid one.
+Despite these downsides, pyroprocessing is an efficient use of electrochemical separation and leader in proliferation resistant separations.
+
 \section{Theory and Mechanisms}
 \subsection{Electrochemical Separations}
 Electrochemical separation is the driving force behind pyroprocessing. Electrochemistry relies on the use of Gibbs free energy to determine the required amount of energy to drive a reaction forward.
@@ -73,6 +78,8 @@ The processes described here follow the same principles, however, require energy
 In both cases, ions are exchanged between the anode and cathode in an attempt to balance the potential difference.
 In the case of pyroprocessing, the potential difference is artificially applied.
 A number of different anodes and cathodes are used to force the desired ions to deliver charge from one end of the cell to the other.
+These ions that collect on the surface of the cathode can then be removed from the liquid and separated from the rest of the solution.
+By controlling the voltage of the solution as well as the composition of the anode, cathode, and electrolyte we can ensure the removal of unwanted elements/isotopes.
 
 \section{Process}
 There are multiple different designs for a pyroprocessing facility, the most prominent being from ANL, INL, and KAERI. In order to encompass them all, we must take a generic approach. This is accomplished by including the following sub-processes: Voloxidation, Electroreduction, Electrorefining, and Electrowinning. While Electrorefining is the process of primary concern, each of the processes has an important in role in various processing plants. Figure 2 shows the flowsheet of a pyroprocessing plant capable of separating MOX fuel as well as fast reactor molten salt fuel.
@@ -110,7 +117,7 @@ Following off-gassing and conversion to yellowcake, the non-metallic fuel must b
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{reduction_flow}
-	\caption{Electroreduction flow sheet \cite{ohta_pyroprocessing_2004}.}
+	\caption{Electroreduction flow sheet \cite{ohta}.}
 \end{figure}
 
 First step in electrolytic reduction is the recovery of UO$_2$ before reducing the remaining material.
@@ -123,7 +130,7 @@ As in other separations technologies, noble metals can often follow the uranium 
 The lurking noble metal fission products cause an increase in radioactivity of the UO$_2$ stream. 
 Therefore, the weight percent dissolution of Uranium is critical in reducing the amount of waste that follows to the product stream.
 Lithium Oxide can also be used as a catalyst to draw Uranium to the cathode while leaving the noble metal fission products in the salt.
-This is done with 1-3wt\% Li$_2$O in the following equations \cite{oecd}:
+This is done with 1-3wt\% Li$_2$O in the following equations \cite{hur_electrochemical_nodate}:
 
 \[ Li_2O \rightarrow 2Li^+ + O^{2-} \]
 \[ UO_{x/2} + xLi \rightarrow U + xLi_2O \]
@@ -132,7 +139,7 @@ These equations make a continuously driven loop dragging Uranium (either UO$_2$ 
 Disproportionated Lithium ions from the first equation break apart the Uranium and Oxide, with help from the electric potential.
 The U will collect on the cathode while the Li$_2$O is recycled and drives the first equation to the right again. 
 Reduction then occurs on the cathode where the U, TRU, rare earths and noble metals have collected.
-This is achieved by evolving oxygen gas along the anode using the following reactions\cite{oecd,organisation}:
+This is achieved by evolving oxygen gas along the anode using the following reactions\cite{hur_electrochemical_nodate,organisation}:
 
 \[ Li^+ \rightarrow Li + e^- \hspace{10mm} Cathode \]
 \[ M_xO_y + 2yLi \rightarrow xM + yLi_2O \hspace{10mm} Cathode \]
@@ -155,11 +162,13 @@ The refining step's efficiency relies on temperature and current primarily, howe
 KAERI for example has conducted work on adding a central stirrer, vacuum pressure, and rotating the anode \cite{lee_advanced}.
 The rotation aims to mix the Uranium in the salt such that none gets stuck on the bottom or edges of the vessel. 
 Stirring too vigorously, however, can lead to the removal of uranium dendrites from the cathode thereby decreasing efficiency.\\
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{refining}
 	\caption{Enlarged mass balance area of Electrorefining \cite{westphal_pyre_2018}.}
 \end{figure}
+
 Figure 5 shows the final removal of fission products, RE, and contaminated salt. 
 The governing reactions that allow this process to work are based on the stability constants and oxidization potential of the remaining fission products.
 The voltage used is such that Uranium is unstable in the chloride form, 0.5~1V \cite{organisation}, while transuranics have a higher stability. 
@@ -173,20 +182,55 @@ The chloride reaction follows the below equation, and will run to the right as l
 \[ 4UCl_3 + 3Zr \rightarrow 3ZrCl_4 + 5U \hspace{10mm} \delta G = 31.123kcal \]
 
 As shown by the reactions above, the TRU have a favorable gibbs free energy value for spontaneous reaction while the transition metals do not \cite{supy}.
-This leads to the transition metals remaining in anode basket while the TRU are drawn into the liquid cathode.
+This leads to the transition metals remaining in anode basket while the TRU are drawn into the liquid cadmium cathode \cite{lee_korean_2011}.
 
 
 \subsection{Electrowinning}
-
-
+The Electrorefiner accumulates TRUs and rare earth fission products within the salt.
+These isotopes build up and require separation and disposal, therefore the salt from the refiner is sent to the electrowinner.
+This stage further purifies the salt by targeting the electric potential of TRUs, RE and Uranium again \cite{lee_korean_2011,organisation}.
+Placed in liquid cadmium once again, the three groups have overlapping electric potentials.
+Therefore, the three groups will all deposit in the cadmium \cite{lee_korean_2011}. 
+While the refiner's role is to generate a stream of pure Uranium, the electrowinner performs co-extraction of Uranium and TRUs.
+This inherit proliferation resistance is a main draw of the pyroprocessing technique.
+Rare earths are still present on the cadmium therefore further separations must be conducted.
+These elements are removed through the addition of CdCl$_2$ which oxidizes the rare earths while the uranium and TRUs are unaffected.
+These oxidized elements fall back into the salt, leaving the purified U/TRU stream on the electrowinner.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{winning}
 	\caption{Enlarged mass balance area of Electrowinning \cite{westphal_pyre_2018}.}
 \end{figure}
+
+Figure 6 shows the elements separated and used for observation. The use of a porous shroud has been suggested on the anode to increase surface area while limiting Cl$_2$ gas production from the LiCl-KCl eutectic. Such an addition has been theorized to improve separation efficiency and protecting against corrosion \cite{kim_development_2013}.
+
 \section{Summary}
+Pyroprocessing is a batch electrochemical separations process for the co-extraction of Uranium and Transuranics.
+The facility takes advantage of the f-orbital elements' close electric potentials in certain media to perform this co-extraction. 
+With the use of the additional voloxidation and electroreduction sub-processes, pyroprocessing is able to refine lwr spent fuel as well as metallic fast reactor fuel.
+The voloxidation stage handles the release of noble gases and troublesome fission products such as carbon-14, krypton and iodine if run at high enough temperature.
+This separates a bulk of the radioactivity at the beginning of the batch, sparing unnecessary damage to instrumentation or workers.
+The reduction step takes the powder from voloxidation and reduces the uranium, transuranics, noble metal fission products and rare earth fission products.
+The use of a Li$_2$O catalyst in addition to the LiCl-KCl eutectic provides an expedited route for Uranium to deposit on the cathode, resulting in an ingot consisting of U/TRU/RE/NM. \\ \\
+After the reduction stage, the light water reactor spent fuel can now enter the refiner just as metallic fast reactor spent fuel does.
+Electrorefiners are responsible for the first product stream of the batch.
+The process takes place inside the LiCl-KCl eutectic with a graphite cathode for an output stream of pure Uranium. 
+Taking advantage of the stability constants of TRU chloride compounds compared to Uranium.
+TRUs are substantially more stable in their chloride form than Uranium, leading to Uranium being drawn out of the salt first.
+Additionally, noble metals lack the gibbs free energy to be reduced and enter the salt to begin with.
+This leaves noble metals in the anode basket, TRU and RE in the LiCl-KCl eutectic, and Uranium accumulating on the graphite cathode.
+Finally the salt containing TRU and RE is sent to the electrowinning stage for final separations. 
+The Electrowinning process is similar to the refiner, however, focuses on the co-extraction of Uranium and TRUs.
+Again, the similarity in electrochemical potential is used to collect essentially all of the Uranium, TRU, and RE on a liquid cadmium cathode.
+Following this, a CdCl$-_2$ oxidant is used to oxidize the rare earth elements on the cathode which proceed to fall back into the molten salt.
+This process leaves a stream of co-extracted Uranium and TRU for fabricating fast reactor fuel, and extremely proliferation resistant. \\ \\
 
+The versatility, effectiveness and safety of pyroprocessing plants has been demonstrated through a detailed analyses of the chemistry behind each main process. 
+Electrochemical separation of heavy elements such as U and TRU are not viable in water based solutions such as nitric acid because of water's own stability constant.
+The addition of a molten salt eutectic allows a potential strong enough for direct separation of key isotopes and element groups for fuel fabrication. 
+Combining with other known separations techniques like voloxidation, off-gas treatment and salt distillation, a majority of undesirable elements are separated from the waste salt as well.
 
-\bibliography{ieeetr}
+\bibliographystyle{ieeetr}
+\bibliography{bibliography}
 \end{document}
